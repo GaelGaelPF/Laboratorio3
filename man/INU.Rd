@@ -7,7 +7,7 @@
 INU(Censo_Quinq)
 }
 \arguments{
-\item{x}{Tabla Quinquenal}
+\item{Censo_Quinq}{Tabla Quinquenal}
 }
 \value{
 Tabla con elementos para el calculo del INU así como el INU
