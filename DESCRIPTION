@@ -1,0 +1,18 @@
+Package: Laboratorio3
+Type: Package
+Title: Paquete de Laboratorio 3
+Version: 0.1.0
+Authors@R: c(
+    person("Dannya Nicole", "Piedragil Román", role = "aut"),
+    person("Gael", "Peña Fonseca", role = c("aut", "cre"),
+           email = "gaelswitch@ciencias.unam.mx"),
+    person("Mario Enrique", "Mejia Ortega", role = "aut")
+  )
+Description: Paquete de práctica creado en el Laboratorio 3.
+License: GPL-3
+Encoding: UTF-8
+LazyData: dtImports: 
+    beepr
+Depends: 
+    dplyr
+Config/roxygen2/version: 8.1.0
