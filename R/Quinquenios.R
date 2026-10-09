@@ -28,4 +28,5 @@ Quinquenios <- function(Censo){
       Tabla5nios$Mujeres[i] <- sum(Censo$Mujeres[86:101])
     }
   }
+  return(Tabla5nios)
 }
