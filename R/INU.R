@@ -30,11 +30,11 @@ INU <- function(Censo_Quinq){
       y <- i-1
       Z <- i+1
 
-      Tabla_para_INU$IIM[i] <- abs(Tabla_para_INU$IM[X]-Tabla_para_INU$IM[y])
-      Tabla_para_INU$CEH[i] <- (2*Censo_Quinq$Hombres[X]/(Censo_Quinq$Hombres[y]+Censo_Quinq$Hombres[y]))*100
-      Tabla_para_INU$DEH[i] <- abs(Tabla_para_INU$CEH[X]-100)
-      Tabla_para_INU$CEM[i] <- (2*Censo_Quinq$Mujeres[X]/(Censo_Quinq$Mujeres[y]+Censo_Quinq$Mujeres[y]))*100
-      Tabla_para_INU$DEM[i] <- abs(Tabla_para_INU$CEM[X]-100)
+      Tabla_para_INU$IIM[i] <- abs(Tabla_para_INU$IM[x]-Tabla_para_INU$IM[y])
+      Tabla_para_INU$CEH[i] <- (2*Censo_Quinq$Hombres[x]/(Censo_Quinq$Hombres[y]+Censo_Quinq$Hombres[z]))*100
+      Tabla_para_INU$DEH[i] <- abs(Tabla_para_INU$CEH[x]-100)
+      Tabla_para_INU$CEM[i] <- (2*Censo_Quinq$Mujeres[x]/(Censo_Quinq$Mujeres[y]+Censo_Quinq$Mujeres[z]))*100
+      Tabla_para_INU$DEM[i] <- abs(Tabla_para_INU$CEM[x]-100)
     }
   }
   return(Tabla_para_INU)
