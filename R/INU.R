@@ -28,7 +28,7 @@ INU <- function(Censo_Quinq){
     if(i>1 && i<18){
       x <- i
       y <- i-1
-      Z <- i+1
+      z <- i+1
 
       Tabla_para_INU$IIM[i] <- abs(Tabla_para_INU$IM[x]-Tabla_para_INU$IM[y])
       Tabla_para_INU$CEH[i] <- (2*Censo_Quinq$Hombres[x]/(Censo_Quinq$Hombres[y]+Censo_Quinq$Hombres[z]))*100
