@@ -4,7 +4,7 @@
 #' @return Tabla con elementos para el calculo del INU así como el INU
 #' @export
 
-INU <- function(Censo_Quinq){
+Tab_INU <- function(Censo_Quinq){
   Edad <- vector(mode = "numeric", length = 18)
   IM   <- vector(mode = "numeric", length = 18)
   IIM  <- vector(mode = "numeric", length = 18)
@@ -22,7 +22,7 @@ INU <- function(Censo_Quinq){
                            DEM = DEM
                                      )
   for(i in 1:18){
-    Edad[i] <- Censo_Quinq$Edad[i]
+    Tabla_para_INU$Edad[i] <- Censo_Quinq$Edad[i]
     Tabla_para_INU$IM[i] <- (Censo_Quinq$Hombres[i]/Censo_Quinq$Mujeres[i])*100
 
     if(i>1 && i<18){
@@ -39,3 +39,27 @@ INU <- function(Censo_Quinq){
   }
   return(Tabla_para_INU)
 }
+#' Función que calcula el INU y devuelve su categoria
+#'
+#' @param TablaINU Tabla Quinquenal
+#' @return INU con su clasificación
+#' @export
+INU_f <- function(TablaINU){
+    a <- 2
+    b <- 17
+    x1 <- 3*(sum(TablaINU$IIM[a:b]/16))
+    x2 <- (sum(TablaINU$DEH[a:b]/16))
+    x3 <- (sum(TablaINU$DEM[a:b]/16))
+    INU  <- x1 + x2 +x3
+
+
+
+    if(INU < 20){
+      clas <- as.character("Información de calidad satisfactoria")
+    }else if (INU < 40){
+      clas <- as.character("Información de calidad intermedia")
+    }else clas <- as.character("Información de calidad deficiente")
+
+    return(paste(INU," :por lo tanto tenemos", clas))
+}
+
